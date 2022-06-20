@@ -6,6 +6,13 @@
     "name": "Olexandr Balyk",
     "email": "olexandr.balyk@ucc.ie"
   },
+  "bugs": {
+    "url": "https://github.com/MaREI-EPMG/epmg-energy-scenarios/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaREI-EPMG/epmg-energy-scenarios.git"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
