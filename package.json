@@ -6,6 +6,7 @@
     "name": "Olexandr Balyk",
     "email": "olexandr.balyk@ucc.ie"
   },
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/MaREI-EPMG/epmg-energy-scenarios/issues"
   },

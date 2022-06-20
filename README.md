@@ -1,6 +1,8 @@
 # EPMG Energy Scenarios
 
-This web app is developed to provide a convinient way of exploring EPMG energy scenarios using modern web technologies.
+[![license](https://img.shields.io/github/license/MaREI-EPMG/epmg-energy-scenarios?color=purple)](LICENSE)
+
+This web app is developed to provide a convenient way of exploring EPMG energy scenarios using modern web technologies.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
