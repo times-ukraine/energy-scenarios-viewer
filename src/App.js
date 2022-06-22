@@ -1,8 +1,8 @@
 import "./App.css";
 import React, { useRef } from "react";
-import { Button, Card, Col, Row } from "react-bootstrap";
-// import StudyPortal from "energy-charts";
+//import StudyPortal from "energy-charts";
 import useFetch from "energy-charts/dist/hooks/useFetch";
+import { RepoCardsSection } from "./components";
 import logo from "./logo.svg";
 
 function App() {
@@ -38,28 +38,7 @@ function App() {
           <img src={logo} className="App-logo" alt="logo" />
           <p>Energy Policy and Modelling Group (EPMG)</p>
         </a>
-        <Row
-          xs={"auto"}
-          className="py-2 justify-content-center align-items-center"
-        >
-          {topicRepos &&
-            topicRepos.map((topicRepo, idx) => (
-              <Col className="p-2" key={idx}>
-                <Card bg="success">
-                  <Card.Header>{topicRepo.name}</Card.Header>
-                  <Card.Body>{topicRepo.description}</Card.Body>
-                  <Card.Footer>
-                    <Button
-                      variant="light"
-                      href={`https://github.com/${org}/${topicRepo.name}`}
-                    >
-                      Explore
-                    </Button>
-                  </Card.Footer>
-                </Card>
-              </Col>
-            ))}
-        </Row>
+        <RepoCardsSection repositories={topicRepos} cardBg="success" />
       </header>
     </div>
   );
