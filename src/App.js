@@ -1,24 +1,30 @@
-import logo from "./logo.svg";
 import "./App.css";
+import React, { useRef } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
+// import StudyPortal from "energy-charts";
+import useFetch from "energy-charts/dist/hooks/useFetch";
+import logo from "./logo.svg";
 
 function App() {
-  const repositories = [
-    {
-      name: "tim-carbon-budgets-2022",
-      description: "TIM sectoral carbon budgets study"
-    },
-    {
-      name: "tim-carbon-budgets-2021",
-      description: "TIM carbon budgets scenarios 2021"
-    },
-    {
-      name: "tim-energy-security-2022",
-      description: "TIM energy security scenarios 2022"
-    }
-  ];
+  const cache = useRef({});
+  const topics = ["tim-scenario"];
+  const org = "MaREI-EPMG";
 
-  const orgUrl = "https://github.com/MaREI-EPMG";
+  const [isReposLoading, repositories] = useFetch(
+    `https://api.github.com/orgs/${org}/repos`,
+    cache
+  );
+
+  //  const orgGhPages = `https://${org}.github.io/`;
+
+  const topicRepos = isReposLoading
+    ? null
+    : repositories.filter((repository) => {
+        return (
+          topics.some((topic) => repository.topics.includes(topic)) &&
+          repository.has_pages
+        );
+      });
 
   return (
     <div className="App">
@@ -36,19 +42,23 @@ function App() {
           xs={"auto"}
           className="py-2 justify-content-center align-items-center"
         >
-          {repositories.map((repository, idx) => (
-            <Col className="p-2" key={idx}>
-              <Card bg="success">
-                <Card.Header>{repository.name}</Card.Header>
-                <Card.Body>{repository.description}</Card.Body>
-                <Card.Footer>
-                  <Button variant="light" href={`${orgUrl}/${repository.name}`}>
-                    Explore
-                  </Button>
-                </Card.Footer>
-              </Card>
-            </Col>
-          ))}
+          {topicRepos &&
+            topicRepos.map((topicRepo, idx) => (
+              <Col className="p-2" key={idx}>
+                <Card bg="success">
+                  <Card.Header>{topicRepo.name}</Card.Header>
+                  <Card.Body>{topicRepo.description}</Card.Body>
+                  <Card.Footer>
+                    <Button
+                      variant="light"
+                      href={`https://github.com/${org}/${topicRepo.name}`}
+                    >
+                      Explore
+                    </Button>
+                  </Card.Footer>
+                </Card>
+              </Col>
+            ))}
         </Row>
       </header>
     </div>
