@@ -1,4 +1,5 @@
 import "./App.css";
+import "energy-charts/dist/index.css";
 import React, { useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import StudyPortal from "energy-charts";
