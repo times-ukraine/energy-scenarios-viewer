@@ -18,6 +18,8 @@ const headerNavs = [{ to: "results", text: "Results" }];
 
 const orgGhPages = "https://MaREI-EPMG.github.io";
 
+const periods = Array.from(Array(31), (e, i) => 2020 + i);
+
 let config = {};
 
 studies.forEach(
@@ -36,7 +38,13 @@ studies.forEach(
       routes: routes,
       contentNavs: contentNavs,
       headerNavLinks: headerNavs,
-      basePath: `${orgGhPages}/${study}`
+      basePath: `${orgGhPages}/${study}`,
+      xGridValues: periods,
+      maxChartWidth: 600,
+      xDomainPadding: 11,
+      stackbarOffset: 7,
+      barWidth: 12,
+      chartPadding: { left: 40, right: 20, top: 50, bottom: 35 }
     })
 );
 
