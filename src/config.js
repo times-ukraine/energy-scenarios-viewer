@@ -20,11 +20,18 @@ const orgGhPages = "https://MaREI-EPMG.github.io";
 
 const periods = Array.from(Array(31), (e, i) => 2020 + i);
 
+const alert = {
+  heading: "Work in progress...",
+  text: "Please don't cite or use these results.",
+  variant: "danger"
+};
+
 let config = {};
 
 studies.forEach(
   (study) =>
     (config[study] = {
+      alert: alert,
       chartsInfo: chartsInfo,
       chartsPath: chartsPath,
       titles: {
