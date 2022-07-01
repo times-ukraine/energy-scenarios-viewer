@@ -2,6 +2,7 @@ import "./App.css";
 import "energy-charts/dist/index.css";
 import React, { useRef } from "react";
 import { Routes, Route } from "react-router-dom";
+import { Accordion, Container } from "react-bootstrap";
 import StudyPortal from "energy-charts";
 import useFetch from "energy-charts/dist/hooks/useFetch";
 import { RepoCardsSection } from "./components";
@@ -26,6 +27,24 @@ function App() {
         );
       });
 
+  const sections = [
+    {
+      title: "Work in progress",
+      repos: topicRepos,
+      style: "warning"
+    },
+    {
+      title: "Recent studies",
+      repos: null,
+      style: "success"
+    },
+    {
+      title: "Archive",
+      repos: null,
+      style: "primary"
+    }
+  ];
+
   return (
     <Routes>
       <Route
@@ -33,16 +52,34 @@ function App() {
         element={
           <div className="App">
             <header className="App-header">
-              <a
-                className="App-link"
-                href="https://www.marei.ie/energy-policy-modelling/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>Energy Policy and Modelling Group (EPMG)</p>
-              </a>
-              <RepoCardsSection repositories={topicRepos} cardBg="success" />
+              <Container fluid="xxl">
+                <a
+                  className="App-link"
+                  href="https://www.marei.ie/energy-policy-modelling/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={logo} className="App-logo" alt="logo" />
+                  <p>Energy Policy and Modelling Group (EPMG)</p>
+                </a>
+                <Accordion defaultActiveKey={["0"]} flush className="w-100">
+                  {sections.map((section, idx) => (
+                    <Accordion.Item
+                      key={idx}
+                      eventKey={`${idx}`}
+                      style={{ backgroundColor: "transparent" }}
+                    >
+                      <Accordion.Header>{section.title}</Accordion.Header>
+                      <Accordion.Body>
+                        <RepoCardsSection
+                          repositories={section.repos}
+                          cardBg={section.style}
+                        />
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  ))}
+                </Accordion>
+              </Container>
             </header>
           </div>
         }
