@@ -14,7 +14,9 @@ const studies = [
   "tim-carbon-budgets-2022"
 ];
 
-const headerNavs = [{ to: "results", text: "Results" }];
+const headerNavLinks = [{ to: "results", text: "Results" }];
+
+const headerNavBrand = { brand: "Energy Scenarios", to: "/" };
 
 const orgGhPages = "https://MaREI-EPMG.github.io";
 
@@ -44,7 +46,8 @@ studies.forEach(
       landingPage: "about",
       routes: routes,
       contentNavs: contentNavs,
-      headerNavLinks: headerNavs,
+      headerNavLinks: headerNavLinks,
+      headerNavBrand: headerNavBrand,
       basePath: `${orgGhPages}/${study}`,
       xGridValues: periods,
       maxChartWidth: 600,
