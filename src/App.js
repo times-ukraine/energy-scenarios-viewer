@@ -29,14 +29,14 @@ function App() {
 
   const sections = [
     {
-      title: "Work in progress",
-      repos: topicRepos,
-      style: "warning"
-    },
-    {
       title: "Recent studies",
       repos: null,
       style: "success"
+    },
+    {
+      title: "Work in progress",
+      repos: topicRepos,
+      style: ""
     },
     {
       title: "Archive",
