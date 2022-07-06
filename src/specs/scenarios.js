@@ -124,6 +124,14 @@ const scenarios = {
       variants: [{ name: "No_Mitigation", specs: null }]
     },
     {
+      name: "Mitigation_Baseline",
+      variants: [{ name: "Mitigation_Baseline", specs: null }]
+    },
+    {
+      name: "Mitigation_Electrification",
+      variants: [{ name: "Mitigation_Electrification", specs: null }]
+    },
+    {
       name: "Mitigation_SectoralCBs",
       variants: [{ name: "Mitigation_SectoralCBs", specs: null }]
     },

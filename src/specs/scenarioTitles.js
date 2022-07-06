@@ -92,7 +92,9 @@ const scenarioTitles = {
     "Reduced Sectoral CBs (HL-TO)",
   "Mitigation_CarbonBudget-LED_Halfway-TechOptimism": "Whole System CB (HL-TO)",
   "Mitigation_ReducedCarbonBudget-LED_Halfway-TechOptimism":
-    "Reduced System CB (HL-TO)"
+    "Reduced System CB (HL-TO)",
+  "Mitigation_Baseline": "Baseline",
+  "Mitigation_Electrification": "Electrification"
 };
 
 export default scenarioTitles;
