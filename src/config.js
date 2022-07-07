@@ -5,8 +5,6 @@ import scenarioTitles from "./specs/scenarioTitles";
 import scenarios from "./specs/scenarios";
 import routes from "./specs/routes";
 import contentNavs from "./specs/contentNavs";
-import useFetch from "energy-charts/dist/hooks/useFetch";
-
 const chartsPath = "results/*";
 
 const studies = [
@@ -23,27 +21,16 @@ const orgGhPages = "https://MaREI-EPMG.github.io";
 
 const periods = Array.from(Array(31), (e, i) => 2020 + i);
 
-let cache = {};
-
 const alert = {
   heading: "Work in progress...",
   text: "Please don't cite or use these results.",
   variant: "danger"
 };
 
-function ChartsInfo() {
-  const chartsInfo = useFetch(
-    `${orgGhPages}/tim-carbon-budgets-2022/specs/charts.json`,
-    cache
-  );
-
-  return chartsInfo;
-}
-
 const chartsInfo = {
   "tim-carbon-budgets-2021": commonChartsInfo,
   "tim-energy-security-2022": commonChartsInfo,
-  "tim-carbon-budgets-2022": ChartsInfo
+  "tim-carbon-budgets-2022": commonChartsInfo
 };
 
 let config = {};
