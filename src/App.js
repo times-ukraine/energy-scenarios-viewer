@@ -3,18 +3,18 @@ import "energy-charts/dist/index.css";
 import React, { useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Accordion, Container } from "react-bootstrap";
-import StudyPortal from "energy-charts";
 import useFetch from "energy-charts/dist/hooks/useFetch";
-import { RepoCardsSection } from "./components";
+import { Portal, RepoCardsSection } from "./components";
 import logo from "./logo.svg";
-import config from "./config";
 
 function App() {
   const cache = useRef({});
   const topics = ["tim-scenario"];
+  const org = "MaREI-EPMG";
+  const ghPages = `https://${org}.github.io`;
 
   const [isReposLoading, repositories] = useFetch(
-    "https://api.github.com/orgs/MaREI-EPMG/repos",
+    `https://api.github.com/orgs/${org}/repos`,
     cache
   );
 
@@ -89,7 +89,13 @@ function App() {
           <Route
             key={idx}
             path={`${topicRepo.name}/*`}
-            element={<StudyPortal config={config[topicRepo.name]} />}
+            element={
+              <Portal
+                source={`${ghPages}`}
+                study={`${topicRepo.name}`}
+                cache={cache}
+              />
+            }
           />
         ))}
     </Routes>
