@@ -14,7 +14,7 @@ function App() {
   const ghPages = `https://${org}.github.io`;
 
   const [isReposLoading, repositories] = useFetch(
-    `https://api.github.com/orgs/${org}/repos`,
+    `https://api.github.com/orgs/${org}/repos?per_page=100`,
     cache
   );
 
