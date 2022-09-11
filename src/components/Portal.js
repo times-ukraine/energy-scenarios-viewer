@@ -69,31 +69,6 @@ function Portal(props) {
   const routes = repoRoutes ? repoRoutes : commonRoutes;
   const contentNavs = repoContentNavs ? repoContentNavs : commonContentNavs;
 
-  const config = {
-    alert: alert,
-    chartsInfo: chartsInfo,
-    chartsPath: chartsPath,
-    titles: {
-      charts: chartsTitles,
-      series: seriesTitles,
-      scenarios: scenarioTitles
-    },
-    scenarios: scenarios,
-    defaultScenarioGroup: scenarios[0].name,
-    landingPage: "about",
-    routes: routes,
-    contentNavs: contentNavs,
-    headerNavLinks: headerNavLinks,
-    headerNavBrand: headerNavBrand,
-    basePath: `${source}/${study}`,
-    xGridValues: periods,
-    maxChartWidth: 600,
-    xDomainPadding: 11,
-    stackbarOffset: 7,
-    barWidth: 12,
-    chartPadding: { left: 40, right: 20, top: 50, bottom: 35 }
-  };
-
   const isDataLoading =
     isRepoChartsInfoLoading ||
     isRepoChartsTitlesLoading ||
@@ -102,6 +77,33 @@ function Portal(props) {
     isRepoScenariosLoading ||
     isRepoRoutesLoading ||
     isRepoContentNavsLoading;
+
+  const config = !isDataLoading
+    ? {
+        alert: alert,
+        chartsInfo: chartsInfo,
+        chartsPath: chartsPath,
+        titles: {
+          charts: chartsTitles,
+          series: seriesTitles,
+          scenarios: scenarioTitles
+        },
+        scenarios: scenarios,
+        defaultScenarioGroup: scenarios[0].name,
+        landingPage: "about",
+        routes: routes,
+        contentNavs: contentNavs,
+        headerNavLinks: headerNavLinks,
+        headerNavBrand: headerNavBrand,
+        basePath: `${source}/${study}`,
+        xGridValues: periods,
+        maxChartWidth: 600,
+        xDomainPadding: 11,
+        stackbarOffset: 7,
+        barWidth: 12,
+        chartPadding: { left: 40, right: 20, top: 50, bottom: 35 }
+      }
+    : {};
 
   return !isDataLoading && <StudyPortal config={config} />;
 }
