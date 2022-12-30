@@ -4,7 +4,13 @@
 
 This web app is developed to provide a convenient way of exploring EPMG energy scenarios using modern web technologies.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This particular app, on MaREI-EPMG/epmg-energy-scenarios , is directly imported into the netlify app at https://epmg.netlify.app/ to make the front page there.
+
+TIM results to be displayed in the app should be processed with [MaREI-EPMG/tim-scenario-json](https://github.com/MaREI-EPMG/tim-scenario-json)
+
+The json files can then be put into a fork of [MaREI-EPMG/epmg-scenarios-template](https://github.com/MaREI-EPMG/epmg-scenarios-template) . Follow the instruction **there** to ensure that they are displated in the netlify app.
+
+Below is the standard boiler-plate information for React Apps such as this:
 
 ## Available Scripts
 
