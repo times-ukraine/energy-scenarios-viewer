@@ -16,12 +16,12 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
-    "energy-charts": "^0.7.4",
+    "energy-charts": "^0.8.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
-    "react-router-dom": "^6.6.0",
+    "react-router-dom": "^6.6.1",
     "web-vitals": "^3.1.0"
   },
   "scripts": {
@@ -54,8 +54,8 @@
     "@testing-library/user-event": "^14.4.3",
     "eslint-plugin-react-hooks": "^4.6.0",
     "git-format-staged": "^3.0.0",
-    "husky": "^8.0.2",
-    "prettier": "^2.8.1",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.2",
     "react-scripts": "5.0.1"
   },
   "prettier": {
