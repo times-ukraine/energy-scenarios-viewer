@@ -9,8 +9,8 @@ import logo from "./logo.svg";
 
 function App() {
   const cache = useRef({});
-  const topics = ["tim-scenario"];
-  const org = "MaREI-EPMG";
+  const topics = ["scenario"];
+  const org = "times-ukraine";
   const ghPages = `https://${org}.github.io`;
 
   const [isReposLoading, repositories] = useFetch(
@@ -55,12 +55,12 @@ function App() {
               <Container fluid="xxl">
                 <a
                   className="App-link"
-                  href="https://www.marei.ie/energy-policy-modelling/"
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img src={logo} className="App-logo" alt="logo" />
-                  <p>Energy Policy and Modelling Group (EPMG)</p>
+                  <p>TIMES-Ukraine Energy Scenarios</p>
                 </a>
                 <Accordion defaultActiveKey={["0"]} flush className="w-100">
                   {sections.map((section, idx) => (
