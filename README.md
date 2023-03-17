@@ -1,16 +1,16 @@
-# EPMG Energy Scenarios
+# Energy Scenarios Viewer
 
 [![license](https://img.shields.io/github/license/MaREI-EPMG/epmg-energy-scenarios?color=purple)](LICENSE)
 
-This web app is developed to provide a convenient way of exploring EPMG energy scenarios using modern web technologies.
+This web app is developed to provide a convenient way of exploring TIMES-Ukraine energy scenarios using modern web technologies.
 
-This particular app, on MaREI-EPMG/epmg-energy-scenarios , is directly imported into the netlify app at https://epmg.netlify.app/ to make the front page there.
+This app is deployed to https://times-ukraine.netlify.app/.
 
-TIM results to be displayed in the app should be processed with [MaREI-EPMG/tim-scenario-json](https://github.com/MaREI-EPMG/tim-scenario-json)
+TIMES-Ukraine results to be displayed in the app should be processed with [times-ukraine/scenario-json](https://github.com/times-ukraine/scenario-json)
 
-The json files can then be put into a fork of [MaREI-EPMG/epmg-scenarios-template](https://github.com/MaREI-EPMG/epmg-scenarios-template) . Follow the instruction **there** to ensure that they are displated in the netlify app.
+The json files can then be committed to a repository that is created based on [times-ukraine/scenarios-template](https://github.com/times-ukraine/scenarios-template) template. Follow the instruction **there** to ensure that they are viewable through the app.
 
-Below is the standard boiler-plate information for React Apps such as this:
+Below is the standard boiler-plate information for a React App such as this:
 
 ## Available Scripts
 
