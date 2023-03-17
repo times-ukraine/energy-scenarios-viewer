@@ -16,10 +16,20 @@
       "src": "logo256.png",
       "type": "image/png",
       "sizes": "256x256"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "logo256.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#dfddd5",
-  "background_color": "#dfddd5"
+  "theme_color": "#0057B7",
+  "background_color": "#0057B7"
 }

@@ -1,18 +1,18 @@
 {
-  "name": "epmg-energy-scenarios",
+  "name": "energy-scenarios-viewer",
   "version": "0.1.0",
   "private": true,
   "author": {
     "name": "Olexandr Balyk",
-    "email": "olexandr.balyk@ucc.ie"
+    "email": "olex@energymodelling.club"
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/MaREI-EPMG/epmg-energy-scenarios/issues"
+    "url": "https://github.com/times-ukraine/energy-scenarios-viewer/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MaREI-EPMG/epmg-energy-scenarios.git"
+    "url": "git+https://github.com/times-ukraine/energy-scenarios-viewer.git"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
